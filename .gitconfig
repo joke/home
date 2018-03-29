@@ -1,0 +1,50 @@
+[user]
+	name = Joke de Buhr
+	email = joke@seiken.de
+	signingKey = 0x86AA80787A77AAD9
+[log]
+	decorate = true
+[rebase]
+	stat = true
+	autosquash = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[push]
+	default = simple
+[alias]
+	logs = log --stat
+	logg = log --graph -M40 -C40
+	loggs = log --graph --stat -M40 -C40
+	loggsc = log --graph --stat -M40 -C40 --find-copies-harder --follow
+	logo = log --pretty=oneline
+	pushf = push --force-with-lease
+[color]
+	ui = true
+[commit]
+	gpgsign = false
+[diff]
+	mnemonicprefix = true
+	renames = copies
+	algorithm = histogram
+	prune = true
+[fetch]
+	prune = true
+[grep]
+	patternType = perl
+[help]
+	autocorrect = 20
+[merge]
+	defaultToUpstream = true
+	log = true
+	tool = idea
+[pull]
+	rebase = true
+[gpg]
+	program = gpg2
+[branch]
+	autosetuprebase = always
+[instaweb]
+	browser = firefox
+[init]
+	templatedir = ~/.git.template

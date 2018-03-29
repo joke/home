@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+if [[ ! -L ~/.local/share/fonts/powerline ]] {
+        mkdir -p ~/.local/share/fonts
+        ln -sf $ZPLUG_REPOS/powerline/fonts ~/.local/share/fonts/powerline
+}

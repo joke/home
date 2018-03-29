@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+cd ~/
+[[ -e ~/.git ]] && exit 0
+git init --separate-git-dir $ZPLUG_REPOS/joke/home/.git
+git remote add ssh git@github.com:joke/home.git
+git config status.showUntrackedFiles no
