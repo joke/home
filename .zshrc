@@ -46,6 +46,7 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 alias -g ':G=| egrep -i'
 alias -g ':g=| egrep'
 
-watch=('notme')
-path=($HOME/bin $ZPLUG_HOME/bin $path)
+setopt autonamedirs bgnice checkjobs globassign globstarshort histallowclobber histfcntllock histlexwords histnostore histreduceblanks noincappendhistory numericglobsort rcexpandparam rematchpcre
 
+watch=('notme')
+path=($ZPLUG_HOME/bin $path)
