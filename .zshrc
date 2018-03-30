@@ -1,5 +1,7 @@
+# zplug managed
 checksum="${$(sha512sum < ${ZDOTDIR-$HOME}/.zshrc)[1]}"
 
+# install zplug
 if [[ ! -d ~/.zplug ]] {
 	print 'Checking requirements and installing zplug'
 	whence -p git >&- || exit 8
