@@ -7,6 +7,7 @@ if [[ ! -e ~/.git ]] {
 	git remote add zplug $ZPLUG_REPOS/joke/home
 	git fetch public
 	git reset --soft public/master
+	git branch --set-upstream-to=origin/master master
 }
 git fetch zplug
 git reset --keep zplug/master
