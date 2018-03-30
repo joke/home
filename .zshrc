@@ -1,4 +1,4 @@
-# zplug setup
+checksum="${$(sha512sum < ${ZDOTDIR-$HOME}/.zshrc)[1]}"
 
 if [[ ! -d ~/.zplug ]] {
 	print 'Checking requirements and installing zplug'
@@ -37,6 +37,7 @@ zplug 'openshift/origin', from:gh-r, as:command, use:'*client*linux*64*', rename
 
 zplug check || { zplug install && touch $ZPLUG_HOME/log/update.log }
 [[ -z "$(print $ZPLUG_HOME/log/update.log(Nmd-1))" ]] && zplug update
+[[ "${$(sha512sum < ${ZDOTDIR-$HOME}/.zshrc)[1]}" != $checksum ]] && exec $SHELL $*
 
 zplug load --verbose
 
