@@ -1,17 +1,20 @@
 #!/bin/zsh
 cd ~/
 if [[ ! -e ~/.git ]] {
-	git init
-	git config status.showUntrackedFiles no
-	git remote add origin git@github.com:joke/home.git
-	git remote add public https://github.com/joke/home.git
-	git remote add zplug $ZPLUG_REPOS/joke/home
-	git fetch public
-	git diff --no-renames --name-only --diff-filter=D -z | xargs -0 git checkout --
-	git config remote.pushDefault origin
-	git config branch.master.merge refs/heads/master
-	git config branch.master.remote zplug
-	git config branch.master.rebase true
+        git init
+
+        git config status.showUntrackedFiles no
+        git config remote.pushDefault origin
+        git config branch.master.merge refs/heads/master
+        git config branch.master.remote zplug
+        git config branch.master.rebase true
+
+        git remote add origin git@github.com:joke/home.git
+        git remote add public https://github.com/joke/home.git
+        git remote add zplug $ZPLUG_REPOS/joke/home
+        git fetch --multiple public zplug
+        git reset --mixed zplug/master
+        git diff --no-renames --name-only --diff-filter=D -z zplug/master | xargs -r0 git checkout zplug/master --
 }
 git fetch zplug
 git reset --keep zplug/master
