@@ -18,6 +18,7 @@ zstyle ':zplug:config:setopt' only_subshell extended_glob
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'joke/home', as:command, use:'bin/*(.x)', hook-build:'$ZPLUG_REPOS/joke/home/bin/zplug-install-joke_home'
 
+# prezto modules
 zplug 'modules/completion', from:prezto
 zplug 'modules/helper', from:prezto
 zplug 'modules/directory', from:prezto
