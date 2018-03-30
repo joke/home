@@ -42,7 +42,10 @@ zplug 'openshift/origin', from:gh-r, as:command, use:'*client*linux*64*', rename
 # check updates and restart
 zplug check || { zplug install && touch $ZPLUG_HOME/log/update.log }
 [[ -z "$(print $ZPLUG_HOME/log/update.log(Nmd-1))" ]] && zplug update
-[[ "$(sha512sum ${ZDOTDIR-$HOME}/.zshrc)" != $checksum ]] && exec $SHELL $*
+checksumn="$(sha512sum ${ZDOTDIR-$HOME}/.zshrc)"
+print "@@@@@@@@@@@@@@@@@@@@@@@@@@@@ $checksum"
+print "@@@@@@@@@@@@@@@@@@@@@@@@@@@@ $checksumn"
+[[ $checksumn != $checksum ]] && exec $SHELL $*
 
 zplug load --verbose
 
