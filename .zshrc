@@ -1,5 +1,5 @@
 # zplug managed
-checksum="${$(sha512sum < ${ZDOTDIR-$HOME}/.zshrc)[1]}"
+checksum="$(sha512sum ${ZDOTDIR-$HOME}/.zshrc)"
 
 # install zplug
 if [[ ! -d ~/.zplug ]] {
@@ -37,9 +37,10 @@ zplug 'Shougo/dein.vim'
 zplug 'powerline/fonts', hook-build:'$ZPLUG_REPOS/joke/home/bin/zplug-install-powerline_fonts', on:'joke/home'
 zplug 'openshift/origin', from:gh-r, as:command, use:'*client*linux*64*', rename-to:oc
 
+# check updates and restart
 zplug check || { zplug install && touch $ZPLUG_HOME/log/update.log }
 [[ -z "$(print $ZPLUG_HOME/log/update.log(Nmd-1))" ]] && zplug update
-[[ "${$(sha512sum < ${ZDOTDIR-$HOME}/.zshrc)[1]}" != $checksum ]] && exec $SHELL $*
+[[ "$(sha512sum ${ZDOTDIR-$HOME}/.zshrc)}" != $checksum ]] && exec $SHELL $*
 
 zplug load --verbose
 
