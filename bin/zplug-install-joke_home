@@ -8,9 +8,7 @@ if [[ ! -e ~/.git ]] {
 	git remote add zplug $ZPLUG_REPOS/joke/home
 	git fetch public
 	git reset --soft public/master
-	git config branch.master.remote origin
-	git config branch.master.merge refs/heads/master
-	git config branch.master.rebase true
+	git config remote.pushDefault origin
 }
 git fetch zplug
 git reset --keep zplug/master
