@@ -9,6 +9,9 @@ if [[ ! -e ~/.git ]] {
 	git fetch public
 	git reset --soft public/master
 	git config remote.pushDefault origin
+	git config branch.master.merge refs/heads/master
+	git config branch.master.remote origin
+	git config branch.master.rebase true
 }
 git fetch zplug
 git reset --keep zplug/master
