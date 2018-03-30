@@ -3,7 +3,10 @@ cd ~/
 if [[ ! -e ~/.git ]] {
 	git init
 	git remote add origin git@github.com:joke/home.git
-	git remote add zplug ${${:-${ZPLUG_REPOS}/joke/home}#$PWD/}
+	git remote add public https://github.com/joke/home.git
+	git remote add zplug $ZPLUG_REPOS/joke/home
+	git fetch public
+	git reset --soft public/master
 }
 git fetch zplug
 git reset --keep zplug/master
