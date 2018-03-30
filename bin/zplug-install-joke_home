@@ -7,7 +7,7 @@ if [[ ! -e ~/.git ]] {
 	git remote add public https://github.com/joke/home.git
 	git remote add zplug $ZPLUG_REPOS/joke/home
 	git fetch public
-	git reset --soft public/master
+	git diff --no-renames --name-only --diff-filter=D -z | xargs -0 git checkout --
 	git config remote.pushDefault origin
 	git config branch.master.merge refs/heads/master
 	git config branch.master.remote zplug
