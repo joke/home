@@ -52,6 +52,7 @@ zplug load --verbose
 zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:terminal' auto-title 'yes'
 
+# aliases
 alias -g ':G=| egrep -i'
 alias -g ':g=| egrep'
 
