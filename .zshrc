@@ -35,7 +35,7 @@ zplug 'Shougo/dein.vim'
 zplug 'powerline/fonts', hook-build:'$ZPLUG_REPOS/joke/home/bin/zplug-install-powerline_fonts', on:'joke/home'
 zplug 'openshift/origin', from:gh-r, as:command, use:'*client*linux*64*', rename-to:oc
 
-zplug check || zplug install
+zplug check || { zplug install && touch $ZPLUG_HOME/log/update.log }
 [[ -z "$(print $ZPLUG_HOME/log/update.log(Nmd-1))" ]] && zplug update
 
 zplug load --verbose
