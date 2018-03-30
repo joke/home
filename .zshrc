@@ -29,6 +29,7 @@ zplug 'modules/history', from:prezto
 zplug 'modules/history-substring-search', from:prezto
 zplug 'modules/utility', from:prezto
 
+# zsh prompts
 #zplug 'zakaziko99/agnosterzak-ohmyzsh-theme', as:theme
 #zplug 'NicoSantangelo/Alpharized', as:theme
 zplug 'bhilburn/powerlevel9k', as:theme
