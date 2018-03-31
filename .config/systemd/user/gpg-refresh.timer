@@ -1,0 +1,10 @@
+[Unit]
+Description=GnuPG keyring refresh timer
+Documentation=man:gpg2(1)
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=default.target

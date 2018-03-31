@@ -1,0 +1,7 @@
+[Unit]
+Description=GnuPG keyring refresh
+Documentation=man:gpg2(1)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/gpg2 --refresh-keys
