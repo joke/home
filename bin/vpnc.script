@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+cat > /etc/systemd/network/60-vpn.network << EOF
+[Match]
+Name=mgm
+
+[Link]
+MTUBytes=${INTERNAL_IP4_MTU}
+
+[Network]
+Address=${INTERNAL_IP4_ADDRESS}/${INTERNAL_IP4_NETMASKLEN}
+DNS=${INTERNAL_IP4_DNS}
+LinkLocalAddressing=no
+MulticastDNS=true
+Domains=mgm-tp.com mgm-edv.de
+
+[Route]
+Gateway=${INTERNAL_IP4_NETADDR}/${INTERNAL_IP4_NETMASKLEN}
+GatewayOnlink=yes
+
+EOF
+systemctl --system restart systemd-networkd systemd-resolved
