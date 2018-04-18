@@ -38,6 +38,7 @@ zplug 'bhilburn/powerlevel9k', as:theme
 zplug 'Shougo/dein.vim'
 zplug 'powerline/fonts', hook-build:'$ZPLUG_REPOS/joke/home/bin/zplug-install-powerline_fonts', on:'joke/home'
 zplug 'openshift/origin', from:gh-r, as:command, use:'*client*linux*64*', rename-to:oc
+zplug 'BurntSushi/ripgrep', from:gh-r, as:command, use:'*x86_64*linux*', rename-to:rg, if:'[[ ! -e /usr/bin/rg ]]'
 
 # check updates and restart
 zplug check || { zplug install && touch $ZPLUG_HOME/log/update.log }
