@@ -1,6 +1,8 @@
 [Unit]
 Description=GnuPG keyring refresh
 Documentation=man:gpg2(1)
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=oneshot
