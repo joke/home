@@ -7,6 +7,7 @@
 [rebase]
 	stat = true
 	autosquash = true
+	autoStash = true
 [rerere]
 	enabled = true
 	autoupdate = true
