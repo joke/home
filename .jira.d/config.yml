@@ -1,0 +1,3 @@
+endpoint: https://jira.mgm-tp.com/jira/
+password-source: pass
+user: jdebuhr
