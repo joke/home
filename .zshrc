@@ -40,6 +40,7 @@ zplug 'powerline/fonts', hook-build:'$ZPLUG_REPOS/joke/home/bin/zplug-install-po
 zplug 'openshift/origin', from:gh-r, as:command, use:'*client*linux*64*', rename-to:oc
 zplug 'BurntSushi/ripgrep', from:gh-r, as:command, use:'*x86_64*linux*', rename-to:rg, if:'[[ ! -e /usr/bin/rg ]]'
 zplug 'Netflix-Skunkworks/go-jira', from:gh-r, as:command, use:'*linux*64*', rename-to:gj
+zplug 'browserpass/browserpass', from:gh-r, as:command, use:'*linux64.zip', hook-build:'$ZPLUG_REPOS/browserpass/browserpass/install.sh firefox; $ZPLUG_REPOS/browserpass/browserpass/install.sh chromium'
 
 # check updates and restart
 zplug check || { zplug install && touch $ZPLUG_HOME/log/update.log }
