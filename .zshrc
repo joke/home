@@ -1,5 +1,6 @@
 # zplug managed
 checksum="$(sha512sum ${ZDOTDIR-$HOME}/.zshrc)"
+export ZPLUG_THREADS=4
 
 # install zplug
 if [[ ! -d ~/.zplug ]] {
@@ -41,6 +42,7 @@ zplug 'openshift/origin', from:gh-r, as:command, use:'*client*linux*64*', rename
 zplug 'BurntSushi/ripgrep', from:gh-r, as:command, use:'*x86_64*linux*', rename-to:rg, if:'[[ ! -e /usr/bin/rg ]]'
 zplug 'Netflix-Skunkworks/go-jira', from:gh-r, as:command, use:'*linux*64*', rename-to:gj
 zplug 'browserpass/browserpass', from:gh-r, as:command, use:'*linux64.zip', hook-build:'$ZPLUG_REPOS/browserpass/browserpass/install.sh firefox; $ZPLUG_REPOS/browserpass/browserpass/install.sh chromium'
+zplug 'oracle/graal', from:gh-r, as:command, use:'*linux-amd64.tar.gz'
 
 # check updates and restart
 zplug check || { zplug install && touch $ZPLUG_HOME/log/update.log }
