@@ -57,6 +57,7 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 # aliases
 alias -g ':G=| egrep -i'
 alias -g ':g=| egrep'
+alias gradle='./(../)#gradlew(.x)'
 
 setopt autonamedirs bgnice checkjobs globassign globstarshort histallowclobber histfcntllock histlexwords histnostore histreduceblanks noincappendhistory numericglobsort rcexpandparam rematchpcre
 
